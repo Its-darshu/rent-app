@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "com.nammayantra.app-merged_res-47:/xml_backup_rules.xml.flat",
+        "source": "com.nammayantra.app-main-49:/xml/backup_rules.xml"
+    },
+    {
+        "merged": "com.nammayantra.app-merged_res-47:/xml_data_extraction_rules.xml.flat",
+        "source": "com.nammayantra.app-main-49:/xml/data_extraction_rules.xml"
+    }
+]

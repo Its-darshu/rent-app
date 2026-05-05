@@ -18,10 +18,11 @@ import com.nammayantra.app.data.model.mockEquipments
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.List
+import androidx.compose.material.icons.filled.Person
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun HomeScreen(userRole: String, onEquipmentClick: (Equipment) -> Unit, onViewRequests: () -> Unit) {
+fun HomeScreen(userRole: String, onEquipmentClick: (Equipment) -> Unit, onViewRequests: () -> Unit, onProfileClick: () -> Unit) {
     Scaffold(
         topBar = {
             TopAppBar(
@@ -29,6 +30,9 @@ fun HomeScreen(userRole: String, onEquipmentClick: (Equipment) -> Unit, onViewRe
                 actions = {
                     IconButton(onClick = onViewRequests) {
                         Icon(Icons.Filled.List, contentDescription = "View Requests")
+                    }
+                    IconButton(onClick = onProfileClick) {
+                        Icon(Icons.Filled.Person, contentDescription = "Profile")
                     }
                 },
                 colors = TopAppBarDefaults.topAppBarColors(

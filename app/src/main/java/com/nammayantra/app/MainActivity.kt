@@ -16,6 +16,7 @@ import com.nammayantra.app.ui.auth.AuthScreen
 import com.nammayantra.app.ui.home.HomeScreen
 import com.nammayantra.app.ui.booking.BookingScreen
 import com.nammayantra.app.ui.requests.RequestsScreen
+import com.nammayantra.app.ui.profile.ProfileScreen
 import com.nammayantra.app.data.model.Equipment
 import com.nammayantra.app.ui.theme.NammaYantraTheme
 
@@ -32,12 +33,23 @@ class MainActivity : ComponentActivity() {
                     var userRole by remember { mutableStateOf("") }
                     var selectedEquipment by remember { mutableStateOf<Equipment?>(null) }
                     var showRequests by remember { mutableStateOf(false) }
+                    var showProfile by remember { mutableStateOf(false) }
 
                     if (!isLoggedIn) {
                         AuthScreen(
                             onLoginSuccess = { role ->
                                 userRole = role
                                 isLoggedIn = true
+                            }
+                        )
+                    } else if (showProfile) {
+                        ProfileScreen(
+                            userRole = userRole,
+                            onBack = { showProfile = false },
+                            onLogout = {
+                                isLoggedIn = false
+                                showProfile = false
+                                userRole = ""
                             }
                         )
                     } else if (showRequests) {
@@ -62,7 +74,8 @@ class MainActivity : ComponentActivity() {
                             onEquipmentClick = { equipment ->
                                 selectedEquipment = equipment
                             },
-                            onViewRequests = { showRequests = true }
+                            onViewRequests = { showRequests = true },
+                            onProfileClick = { showProfile = true }
                         )
                     }
                 }

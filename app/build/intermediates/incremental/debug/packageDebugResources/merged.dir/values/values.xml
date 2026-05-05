@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Namma-Yantra Share</string>
+    <style name="Theme.NammaYantra" parent="android:Theme.Material.Light.NoActionBar">
+        <item name="android:statusBarColor">#1B5E20</item>
+    </style>
+</resources>
