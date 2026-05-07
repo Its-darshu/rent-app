@@ -14,6 +14,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import com.nammayantra.app.ui.auth.AuthScreen
 import com.nammayantra.app.ui.home.HomeScreen
+import com.nammayantra.app.ui.home.OwnerHomeScreen
 import com.nammayantra.app.ui.booking.BookingScreen
 import com.nammayantra.app.ui.requests.RequestsScreen
 import com.nammayantra.app.ui.profile.ProfileScreen
@@ -68,9 +69,16 @@ class MainActivity : ComponentActivity() {
                                 showRequests = true // Immediately show the user their new request
                             }
                         )
+                    } else if (userRole == "Owner") {
+                        OwnerHomeScreen(
+                            onEquipmentClick = { equipment ->
+                                selectedEquipment = equipment
+                            },
+                            onViewRequests = { showRequests = true },
+                            onProfileClick = { showProfile = true }
+                        )
                     } else {
                         HomeScreen(
-                            userRole = userRole,
                             onEquipmentClick = { equipment ->
                                 selectedEquipment = equipment
                             },

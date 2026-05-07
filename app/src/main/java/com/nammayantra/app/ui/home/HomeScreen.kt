@@ -22,11 +22,11 @@ import androidx.compose.material.icons.filled.Person
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun HomeScreen(userRole: String, onEquipmentClick: (Equipment) -> Unit, onViewRequests: () -> Unit, onProfileClick: () -> Unit) {
+fun HomeScreen(onEquipmentClick: (Equipment) -> Unit, onViewRequests: () -> Unit, onProfileClick: () -> Unit) {
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { Text(if (userRole == "Owner") "My Machinery" else "Nearby Machinery") },
+                title = { Text("Nearby Machinery") },
                 actions = {
                     IconButton(onClick = onViewRequests) {
                         Icon(Icons.Filled.List, contentDescription = "View Requests")
