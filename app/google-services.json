@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "385144767709",
+    "project_id": "krishiyantra-80843",
+    "storage_bucket": "krishiyantra-80843.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:385144767709:android:1e18701eaf97f53dbe4734",
+        "android_client_info": {
+          "package_name": "com.krishiyantra.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "385144767709-7oihufd9eehd461mm72bvoq0njpg5g2h.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.krishiyantra.app",
+            "certificate_hash": "9429e2e5c7af718e1db1d54301f90490807e914f"
+          }
+        },
+        {
+          "client_id": "385144767709-utild44sqletqqdil7i3dpv24h3v0sal.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA6V6lSLEcuetmBtpNUZFstERJL0IE7m2Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "385144767709-utild44sqletqqdil7i3dpv24h3v0sal.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

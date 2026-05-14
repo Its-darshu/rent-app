@@ -1,23 +1,23 @@
 package com.nammayantra.app.data.model
 
+import com.google.firebase.firestore.DocumentId
+
 data class RentalRequest(
-    val id: String,
-    val equipmentName: String,
-    val farmerName: String,
-    val ownerName: String,
-    val date: String,
-    val durationText: String,
-    val totalPrice: Double,
-    var status: RequestStatus
+    @DocumentId val id: String = "",
+    val equipmentId: String = "",
+    val equipmentName: String = "",
+    val farmerId: String = "",
+    val farmerName: String = "",
+    val ownerId: String = "",
+    val ownerName: String = "",
+    val date: String = "",
+    val durationText: String = "",
+    val totalPrice: Double = 0.0,
+    val status: String = "PENDING",
+    val specialInstructions: String = ""
 )
 
-enum class RequestStatus {
-    PENDING, ACCEPTED, DECLINED
-}
+enum class RequestStatus { PENDING, ACCEPTED, DECLINED }
 
-// Simulated mock data for MVP
-val mockRequests = mutableListOf(
-    RentalRequest("REQ1", "Mahindra 275 DI TU", "Raju (Farmer)", "Ramesh (Owner)", "Oct 25, 2026", "4 hours", 2000.0, RequestStatus.PENDING),
-    RentalRequest("REQ2", "Kubota W70", "Raju (Farmer)", "Mahesh (Owner)", "Oct 26, 2026", "1 days", 8000.0, RequestStatus.ACCEPTED),
-    RentalRequest("REQ3", "Aspee Knapsack", "Raju (Farmer)", "Dinesh (Owner)", "Oct 27, 2026", "2 hours", 200.0, RequestStatus.DECLINED)
-)
+val RentalRequest.requestStatus: RequestStatus
+    get() = try { RequestStatus.valueOf(status) } catch (_: Exception) { RequestStatus.PENDING }
